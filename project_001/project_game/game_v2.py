@@ -15,11 +15,17 @@ def random_predict(number: int = 1) -> int:
         int: Число попыток
     """
     count = 0
+    max_number = 101
+    min_number = 1
 
     while True:
         count += 1
-        predict_number = np.random.randint(1, 101)  # предполагаемое число
-        if number == predict_number:
+        half_number = (max_number+min_number)//2
+        if number > half_number:
+            min_number=half_number
+        elif number < half_number:
+            max_number = half_number
+        else:
             break  # выход из цикла если угадали
     return count
 
