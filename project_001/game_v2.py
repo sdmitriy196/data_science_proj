@@ -22,7 +22,7 @@ def random_predict(number: int = 1) -> int:
         count += 1
         half_number = (max_number+min_number)//2
         if number > half_number:
-            min_number=half_number
+            min_number = half_number
         elif number < half_number:
             max_number = half_number
         else:
